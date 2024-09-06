@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+ 
+<p>Please Click on the buttons to add or delete rows from the table.</p>
+ 
+<table id="myTable">
+  <tr>
+    <td>row1 cell1</td>
+    <td>row1 cell2</td>
+  </tr>
+  <tr>
+    <td>row2 cell1</td>
+    <td>row2 cell2</td>
+  </tr>
+  <tr>
+    <td>row3 cell1</td>
+    <td>row3 cell2</td>
+  </tr>
+  <tr>
+    <td>row4 cell1</td>
+    <td>row4 cell2</td>
+  </tr>
+  <tr>
+    <td>row5 cell1</td>
+    <td>row5 cell2</td>
+  </tr>
+</table>
+<br>
+ 
+<button onclick="myinsertbutton()">Insert row</button>
+<button onclick="mydeletebutton()">delete row</button>
+<p id="message"></p>
+<script>
+ 
+    a=5;
+    b=5;
+function myinsertbutton() {
+    a++
+    b++
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(-1);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  cell1.innerHTML = "Row"+a+" Cell 1";
+  cell2.innerHTML = "Row"+a+" Cell 2";
+}
+   document.getElementById("message").innerHTML = "";
+ 
+function mydeletebutton() {
+   b--
+   if (b<2)
+   {
+    document.getElementById("message").innerHTML = "Message: No rows to delete.";
+   }
+    var table = document.getElementById("myTable");
+  var cell= table.deleteRow(0);
+  var cell1 = cell.deleterow(-1);
+  var cell2 = cell.deleterow(0);
+  cell1.innerHTML = "Cell 1 deleted";
+  cell2.innerHTML = "Cell 2 deleted";
+}
+ 
+</script>
+ 
+</body>
+</html>
